@@ -13,6 +13,11 @@ Search.prototype.getRepos = function(userName){
     $('#avatar').attr("src", response.avatar_url);
     $('#githubLink').attr("href", response.html_url);
     $('#reposLink').attr("href", "https://github.com/" + userName + "?tab=repositories");
+    $('#follow').text("Followers: " + response.followers + " -- Following: " + response.following);
+    $('#name').text(response.name);
+    $('#bio').text(response.bio);
+    $('#location').text(response.location);
+    $('#company').text(response.company);
   });
 
   $.get('https://api.github.com/users/' + userName + '/repos?&per_page=1000&access_token=' + apiKey).then(function(response){
