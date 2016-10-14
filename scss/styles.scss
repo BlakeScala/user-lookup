@@ -6,7 +6,14 @@ body {
   background-size: 300px;
 }
 .jumbotron {
-  background-color: $gray;
+  background: -moz-linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(76,76,76,1) 76%, rgba(76,76,76,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,1)), color-stop(76%, rgba(76,76,76,1)), color-stop(100%, rgba(76,76,76,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(76,76,76,1) 76%, rgba(76,76,76,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(76,76,76,1) 76%, rgba(76,76,76,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(76,76,76,1) 76%, rgba(76,76,76,1) 100%); /* ie10+ */
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(76,76,76,1) 76%, rgba(76,76,76,1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#4c4c4c',GradientType=0 ); /* ie6-9 */
+  border-bottom: 2px solid black;
   h1 {
     text-align: center;
     color: white;
@@ -14,12 +21,24 @@ body {
     font-size: 84px;
   }
 }
-#userPanel{
+#userPanel, {
   display: none;
   margin-top: 20px;
   background-color: $gray;
   padding: 15px;
   text-align: center;
+  border: 2px solid black;
+  text-shadow: 0 0 5px black;
+}
+#failure {
+  display: none;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  background-color: $gray;
+  text-align: center;
+  border: 2px solid black;
+  color: white;
+  text-shadow: 0 0 10px black;
 }
 #repositoryPanel {
   display: none;
@@ -28,6 +47,7 @@ body {
   padding: 15px;
   color: white;
   text-shadow: 0 0 5px black;
+  border: 2px solid black;
   h1 {
     text-align: center;
     font-size: 32px;
@@ -36,7 +56,6 @@ body {
 #userName {
   color: white;
   font-size: 32px;
-  text-shadow: 0 0 5px black;
 }
 #avatar {
   width: 300px;
@@ -50,9 +69,14 @@ body {
   width: 50%;
   text-align: center;
   border: 2px solid black;
-  color: white;
   label{
     padding-right: 5px;
     font-size: 18px;
+    color: white;
+    text-shadow: 0 0 10px black;
   }
+}
+#githubLink, #reposLink {
+  font-size: 24px;
+  color: white;
 }

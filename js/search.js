@@ -11,18 +11,18 @@ Search.prototype.getRepos = function(userName){
     $('#repositoryPanel').show();
     $('#userName').text(response.login);
     $('#avatar').attr("src", response.avatar_url);
-    $('#githubLink').attr("href", response.url);
+    $('#githubLink').attr("href", response.html_url);
+    $('#reposLink').attr("href", "https://github.com/" + userName + "?tab=repositories");
   });
 
-  $.get('https://api.github.com/users/' + userName + '/repos?&per_page=100&access_token=' + apiKey).then(function(response){
+  $.get('https://api.github.com/users/' + userName + '/repos?&per_page=1000&access_token=' + apiKey).then(function(response){
     for(var i = 0; i < response.length; i++) {
-      $('#repositoryPanel').append('<h3>' + response[i].name + '</h3>' + '<h5>' + response[i].description + '</h5>');
-      if (response[i].description === null){
-        response[i].description = "No Description"
-      }
+      $('#repositoryPanel').append('<a href ="' + response[i].html_url + '">' + '<h3>' +  response[i].name + '</h3>' + '</a>' + '<h5>' + response[i].description + '</h5>');
+      // if (response[i].description === null){
+      // }
     }
   }).fail(function(error){
-    console.log(error.responseJSON.message);
+    $('#failure').show();
   });
 };
 
