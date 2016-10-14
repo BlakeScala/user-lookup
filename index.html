@@ -12,8 +12,18 @@
       <h1>Github User Lookup</h1>
     </div>
     <div class="container">
-      <form id="nameEntry">
+      <form id = "searchBar">
+        <label for="search">Enter Github Username</label>
+        <input type="text" name="search" id="search">
+        <button type="submit" class="btn-default">Search</button>
       </form>
+      <div class="row">
+        <div class="col-md-5">
+          <div id=userPanel>
+            <h3 id="userName"></h3>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
