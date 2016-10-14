@@ -9,10 +9,23 @@ $gray : #4c4c4c;
     font-size: 84px;
   }
 }
-#userPanel {
+#userPanel{
+  display: none;
   margin-top: 20px;
   background-color: $gray;
   padding: 15px;
+  text-align: center;
+}
+#repositoryPanel {
+  display: none;
+  margin-top: 20px;
+  background-color: $gray;
+  padding: 15px;
+  color: white;
+  text-shadow: 0 0 5px black;
+  h1 {
+    text-align: center;
+  }
 }
 #userName {
   color: white;
@@ -20,6 +33,7 @@ $gray : #4c4c4c;
   text-shadow: 0 0 5px black;
 }
 #avatar {
-  width: 200px;
+  width: 300px;
   border: 2px solid black;
+  margin-bottom: 25px;
 }
